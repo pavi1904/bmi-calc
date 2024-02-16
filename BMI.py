@@ -14,7 +14,19 @@ st.title("Welocme to BMI calculator")
 
 weight = st.number_input("Enter your weight in KG", step = 0.1)
 
-height = st.number_input("Enter your height in Meters", step = 0.01)
+if weight >= 1000.0: 
+    st.success("Are you kidding me?")
+    quit()
+else : 
+    st.success("Mhm nubbbad ah") 
+    
+height = st.number_input("Enter your height in Meters", step = 0.01)  
+
+if height >= 3.00: 
+    st.success("Oh i see")
+    quit()
+else : 
+    st.success("wah quite tall")
 
 def calculate_bmi():
     bmi = weight/(height)**2
@@ -29,7 +41,7 @@ def calculate_bmi():
     else:
         level = level_labels[3]
     st. success(f"Your BMI is {bmi}. You are at {level}")
-
+    
 button = st.button("Calculate BMI")
 if button:
     calculate_bmi()
